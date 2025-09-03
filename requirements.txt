@@ -1,0 +1,38 @@
+# Core RAG Pipeline Dependencies
+langchain>=0.1.0
+langchain-openai>=0.1.0
+langchain-chroma>=0.1.0
+langchain-core>=0.1.0
+chromadb>=0.4.0
+
+# Web Interface
+gradio>=4.0.0
+
+# Environment and Configuration
+python-dotenv>=1.0.0
+
+# Data Processing and Analysis
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Visualization
+matplotlib>=3.6.0
+plotly>=5.15.0
+scikit-learn>=1.3.0
+
+# Optional: HuggingFace Alternatives
+sentence-transformers>=2.2.0
+transformers>=4.30.0
+
+# Optional: FAISS Vector Database
+faiss-cpu>=1.7.4
+
+# Optional: Pinecone Vector Database
+pinecone-client>=2.2.0
+
+# Optional: Local LLM Support
+llama-cpp-python>=0.2.0
+
+# Development and Testing
+jupyter>=1.0.0
+notebook>=6.5.0
