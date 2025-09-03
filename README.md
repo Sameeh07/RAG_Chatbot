@@ -69,16 +69,6 @@ jupyter notebook RAG.ipynb
 
 3. Access the chat interface in your browser and start asking questions!
 
-## 🏗️ Architecture
-
-### Core Components
-
-1. **Document Loader**: Uses LangChain's DirectoryLoader to process markdown files
-2. **Text Splitter**: Chunks documents into manageable pieces (1000 chars with 200 overlap)
-3. **Embedding Model**: Converts text chunks into vector representations
-4. **Vector Database**: Stores and indexes embeddings for fast retrieval
-5. **LLM Integration**: Combines retrieved context with language model for answers
-6. **Chat Interface**: Gradio-based web interface for user interaction
 
 ### Data Flow
 
@@ -191,42 +181,6 @@ plotly
 scikit-learn
 ```
 
-### Optional Packages (for alternatives)
-
-```
-# For HuggingFace embeddings
-sentence-transformers
-transformers
-
-# For FAISS
-faiss-cpu  # or faiss-gpu
-
-# For Pinecone
-pinecone-client
-
-# For Llama.cpp
-llama-cpp-python
-```
-
-## 🔍 Troubleshooting
-
-### Common Issues
-
-1. **OpenAI API Key Issues**
-   - Ensure your API key is correctly set in the `.env` file
-   - Check your OpenAI account has sufficient credits
-
-2. **Memory Issues with Large Documents**
-   - Reduce chunk size or increase overlap
-   - Consider using a more powerful machine or cloud instance
-
-3. **Slow Performance**
-   - Use FAISS instead of Chroma for faster similarity search
-   - Reduce the number of retrieved chunks (k parameter)
-
-4. **Local Model Issues**
-   - Ensure Ollama is running for local LLM models
-   - Check model compatibility and path for llama.cpp
 
 ### Performance Optimization
 
@@ -234,24 +188,6 @@ llama-cpp-python
 - **Vector Databases**: FAISS is faster for large datasets; Pinecone offers cloud scalability
 - **Chunk Size**: Balance between context richness (larger chunks) and precision (smaller chunks)
 
-## 📚 Example Usage
-
-### Basic Question Answering
-```python
-query = "What is the company's main product?"
-result = conversation_chain.invoke({"question": query})
-print(result["answer"])
-```
-
-### With Custom Retrieval Parameters
-```python
-retriever = vectorstore.as_retriever(search_kwargs={"k": 10})
-conversation_chain = ConversationalRetrievalChain.from_llm(
-    llm=llm, 
-    retriever=retriever, 
-    memory=memory
-)
-```
 
 ## 🤝 Contributing
 
@@ -261,9 +197,6 @@ conversation_chain = ConversationalRetrievalChain.from_llm(
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
@@ -271,11 +204,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Chroma](https://www.trychroma.com/) for the vector database
 - [OpenAI](https://openai.com/) for embeddings and language models
 - [Gradio](https://gradio.app/) for the chat interface
-- [HuggingFace](https://huggingface.co/) for open-source model alternatives
-
-## 📞 Support
-
-For questions and support, please open an issue in the repository or contact the maintainers.
 
 ---
 
